@@ -10,6 +10,5 @@ torchvision==0.14.0
 Unidecode==1.1.1
 glob2==0.7
 tqdm==4.64.1
-webrtcvad==2.0.10
 soundfile==0.11.0
 transformers==4.25.1

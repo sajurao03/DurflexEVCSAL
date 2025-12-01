@@ -23,7 +23,7 @@ import numpy as np
 
 
 
-hps=utils.get_hparams_from_file("/logs/cross-lingual-emotional-VC/config.json")
+hps=utils.get_hparams_from_file("/mnt/c/Users/HP/Downloads/cross-lingual-emotional-VC-20251130T165012Z-1-001/cross-lingual-emotional-VC/config.json")
 
 print('len(symbols)',len(symbols))
 net_g = SynthesizerTrn(
@@ -34,7 +34,7 @@ net_g = SynthesizerTrn(
 
 _ = net_g.eval()
 
-_ = utils.load_checkpoint("/logs/cross-lingual-emotional-VC/G_450000.pth", net_g, None)
+_ = utils.load_checkpoint("/mnt/c/Users/HP/Downloads/cross-lingual-emotional-VC-20251130T165012Z-1-001/cross-lingual-emotional-VC/G_450000.pth", net_g, None)
 
 
 def tts_en(text_str,ref_wav_path):
@@ -98,19 +98,16 @@ def tts_en(text_str,ref_wav_path):
 count=0
 from tqdm import tqdm
 phone_text=[
-    "/0019/Angry/0019_000359.wav",
-    "/0017/Surprise/0017_001407.wav",
-    "/0015/Angry/0015_000358.wav",
-    "/0014/Sad/0014_001057.wav",
-    "/0013/Sad/0013_001062.wav",
+    "dataset/vctk/p225/p225_001.wav",
+    "dataset/vctk/p225/p225_002.wav",
+    "dataset/vctk/p225/p225_003.wav",
+    "dataset/vctk/p225/p225_004.wav",
 ]
 spk_list=[
-    "/0008/Angry/0008_000556.wav",
-    "/0003/Sad/0003_001388.wav",
-    "/0005/Happy/0005_000708.wav",
-    "/0010/Sad/0010_001054.wav",
-    "/0007/Happy/0007_000707.wav",
-    "/0002/Angry/0002_000365.wav"
+    "dataset/ESD/0001/Angry/0001_000351.wav",
+    "dataset/ESD/0001/Angry/0001_000352.wav",
+    "dataset/ESD/0001/Angry/0001_000353.wav",
+    "dataset/ESD/0001/Angry/0001_000354.wav",
 ]
 for text in tqdm(phone_text):
     tmp=0    
