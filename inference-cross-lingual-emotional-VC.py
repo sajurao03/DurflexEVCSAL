@@ -23,7 +23,7 @@ import numpy as np
 
 
 
-hps=utils.get_hparams_from_file("/mnt/c/Users/HP/Downloads/cross-lingual-emotional-VC-20251130T165012Z-1-001/cross-lingual-emotional-VC/config.json")
+hps=utils.get_hparams_from_file("/kaggle/input/checkpoints/config.json")
 
 print('len(symbols)',len(symbols))
 net_g = SynthesizerTrn(
@@ -34,7 +34,7 @@ net_g = SynthesizerTrn(
 
 _ = net_g.eval()
 
-_ = utils.load_checkpoint("/mnt/c/Users/HP/Downloads/cross-lingual-emotional-VC-20251130T165012Z-1-001/cross-lingual-emotional-VC/G_450000.pth", net_g, None)
+_ = utils.load_checkpoint("/kaggle/input/checkpoints/G_450000.pth", net_g, None)
 
 
 def tts_en(text_str,ref_wav_path):

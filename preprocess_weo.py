@@ -86,7 +86,7 @@ if __name__ == "__main__":
     ppgPath = args.ppg
 
     # load whisper in float32
-    whisper = load_model('./whisper_pretrain/large-v2.pt')
+    whisper = load_model('/kaggle/input/whisper-large-v2')
 
     # walk through files
     for root, dirs, files in os.walk(wavPath):
