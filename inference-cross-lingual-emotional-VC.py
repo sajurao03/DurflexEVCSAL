@@ -104,10 +104,10 @@ def tts_en(text_str,ref_wav_path):
 count=0
 from tqdm import tqdm
 phone_text=[
-    "dataset/vctknew/p225_001_largev2ppg.npy",
-    "dataset/vctknew/p225_002_largev2ppg.npy",
-    "dataset/vctknew/p225_003_largev2ppg.npy",
-    "dataset/vctknew/p225_004_largev2ppg.npy",
+    "dataset/vctk/p225/p225_001.wav",
+    "dataset/vctk/p225/p225_002.wav",
+    "dataset/vctk/p225/p225_003.wav",
+    "dataset/vctk/p225/p225_004.wav",
 ]
 spk_list=[
     "dataset/ESD/0001/Angry/0001_000351.wav",
