@@ -94,12 +94,12 @@ def tts_en(text_str,ref_wav_path):
     os.makedirs(out_dir, exist_ok=True)
     tgt=ref_wav_path#'/home/dataset/ESD/ESD/ENG22050/0014/Sad/0014_001057.wav'
     wav_tgt, sr = librosa.load(tgt, sr=hps.data.sampling_rate)
-    write(os.path.join("/objexpsum/pro_obj_exp_new/xevc","{}".format(os.path.basename(ref_wav_path))), hps.data.sampling_rate, wav_tgt)
+    write(os.path.join(out_dir,"{}".format(os.path.basename(ref_wav_path))), hps.data.sampling_rate, wav_tgt)
     
     wav_src, sr = librosa.load(src_wav, sr=hps.data.sampling_rate)
-    write(os.path.join("/objexpsum/pro_obj_exp_new/xevc","{}".format(os.path.basename(src_wav))), hps.data.sampling_rate, wav_src)
+    write(os.path.join(out_dir,"{}".format(os.path.basename(src_wav))), hps.data.sampling_rate, wav_src)
 
-    write(os.path.join('/objexpsum/pro_obj_exp_new/xevc', f"{title}"), hps.data.sampling_rate, audio)
+    write(os.path.join(out_dir, f"{title}"), hps.data.sampling_rate, audio)
 
 count=0
 from tqdm import tqdm
