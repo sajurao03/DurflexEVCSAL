@@ -89,6 +89,8 @@ def tts_en(text_str,ref_wav_path):
 
     # print(np.max(audio),np.min(audio),audio.shape,audio.dtype)
     # write("audio.wav", 16000, audio)
+    out_dir = "/kaggle/working/xevc"
+    os.makedirs(out_dir, exist_ok=True)
     tgt=ref_wav_path#'/home/dataset/ESD/ESD/ENG22050/0014/Sad/0014_001057.wav'
     wav_tgt, sr = librosa.load(tgt, sr=hps.data.sampling_rate)
     write(os.path.join("/objexpsum/pro_obj_exp_new/xevc","{}".format(os.path.basename(ref_wav_path))), hps.data.sampling_rate, wav_tgt)
@@ -101,10 +103,10 @@ def tts_en(text_str,ref_wav_path):
 count=0
 from tqdm import tqdm
 phone_text=[
-    "dataset/vctk/p225/p225_001.wav",
-    "dataset/vctk/p225/p225_002.wav",
-    "dataset/vctk/p225/p225_003.wav",
-    "dataset/vctk/p225/p225_004.wav",
+    "dataset/vctknew/p225_001_largev2ppg.npy",
+    "dataset/vctknew/p225_002_largev2ppg.npy",
+    "dataset/vctknew/p225_003_largev2ppg.npy",
+    "dataset/vctknew/p225_004_largev2ppg.npy",
 ]
 spk_list=[
     "dataset/ESD/0001/Angry/0001_000351.wav",
